@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url("https://fonts.googleapis.com/css?family=VT323");
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  font-family: "VT323", 'DotGothic16', sans-serif;
+  color: white;
+  font-size: large;
+  text-shadow: 0 2px 2px #000000;
+}
+
+
+button {
+  font-family: "VT323", 'DotGothic16', sans-serif;
+  font-size: 18px;
+}
+
+.pressStart2p {
+  font-family: "Press Start 2P";
+}
+
+.inline {
+  display: inline-block;
+}
+
+.roate {
+  animation: rotate-anime 2s linear infinite;
+}
+@keyframes rotate-anime {
+  0%  {transform: rotate(0);}
+  100%  {transform: rotate(360deg);}
+}
+
+.fontRed {
+  font-weight: 600;
+  color: gold;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: rgb(255, 255, 255);
+  /* opacity: 0.5; */
+  /* transition: all 0.5s ease-out; */
+}
+
+.moving-background {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5),  rgba(0, 0, 0, .1)), url(./assets/background/senryu.gif);
+  /* background-image: url(./assets/background/senryu.gif); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 40% 40%;
+}
