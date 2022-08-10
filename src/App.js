@@ -21,9 +21,12 @@ function App() {
   const SenryuAddress = Senryu.contractAddress;
   const readOnlyProvider = new ethers.providers.JsonRpcProvider(rpcURL)
   const readOnlyContract = new ethers.Contract(SenryuAddress, Senryu.abi, readOnlyProvider);
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const signer =  provider.getSigner();
-  const contract = new ethers.Contract(SenryuAddress, Senryu.abi, signer);
+  let provider, signer, contract;
+  if(window.ethereum){
+    provider = new ethers.providers.Web3Provider(window.ethereum);
+    signer =  provider.getSigner();
+    contract = new ethers.Contract(SenryuAddress, Senryu.abi, signer);
+  }
 
   //useState(React hooks)
   const [accounts, setAccounts] = useState([]);

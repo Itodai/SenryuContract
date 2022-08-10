@@ -53,6 +53,18 @@ button {
   /* transition: all 0.5s ease-out; */
 }
 
+.slideshow {
+  animation: loop-slide 20s infinite linear 1s both;
+}
+@keyframes loop-slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
 .moving-background {
   z-index: -1;
   position: absolute;
